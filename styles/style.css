@@ -1,5 +1,4 @@
 /* Здесь вы напишете основную часть стилей страницы.
-
 Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
 ✦ theme-dark — класс тёмной темы
 ✦ theme-light — класс светлой темы
@@ -9,12 +8,444 @@
 ✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
-
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
-
 */
-
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font);
+  background-color: var(--bg-color);
+  color: var(--accent-color);
+  background-image: var(--bg-gradient);
+  background-size: cover;
+}
+
+.header {
+  min-height: 364px;
+  width: 48.3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+  border: var(--border);
+  font-family: var(--accent-font), sans-serif;
+  margin: 102px auto 107px;
+}
+
+.header__title {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.header__description {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  margin-bottom: 25px;
+  font-weight: 400;
+}
+
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.theme-menu__button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.theme-menu__button::after {
+  content: '';
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  display: block;
+  background-color: var(--accent-color);
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus-visible::after {
+  transform: scaleX(1);
+  transition: transform 0.3s;
+  transform-origin: left;
+}
+
+.theme-menu__button:focus {
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  outline: none;
+}
+
+.theme-menu__button:hover {
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+button:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+button:disabled::before {
+  content: '▶';
+  position: absolute;
+  left: -16px;
+  opacity: 0.6;
+  animation: line 0.5s ease-in-out infinite alternate;
+}
+
+.content__card__item {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  background-color: var(--bg-color);
+  width: 48.3%;
+  border: var(--border);
+  position: relative;
+}
+
+.content__card__item:not(:last-of-type) {
+  margin-bottom: 57px;
+}
+
+.label {
+  position: absolute;
+  top: 50px;
+  right: 25px;
+  color: var(--accent-color);
+  text-shadow: 1px 1px 0px 0px var(--bg-color);
+  z-index: 2;
+}
+
+@supports((text-stroke: 1px var(--bg-color)) or (-webkit-text-stroke: 1px var(--bg-color))) {
+  .label {
+      -webkit-text-stroke: 1px var(--bg-color);
+      text-stroke: 1px var(--bg-color);
+  }
+} 
+
+.label__title {
+ opacity: 0.5;
+ mix-blend-mode: hard-light;
+ font-family: var(--accent-font), sans-serif;
+ font-size: 14px;
+ font-weight: var(--main-desk);
+ text-transform: uppercase;
+}
+
+.card__title {
+  font-family: var(--main-font), sans-serif;
+  font-size: 18px;
+  font-weight: var( --main-title);
+  padding-left: 10px;
+}
+
+.card__image {
+  width: 100%;
+  border-top: var(--border);
+  border-bottom: var(--border);
+}
+
+.dark__souls {
+  filter: sepia(0.7);
+}
+
+.dog__soul {
+  filter: saturate(2);
+}
+
+.blood__souls {
+  filter: brightness(2);
+}
+
+.dungeon__souls {
+  filter: contrast(1.2) hue-rotate(343deg) brightness(1.5);
+}
+
+.sekiro__souls {
+  filter: hue-rotate(0.7turn);
+}
+
+.mine__souls {
+  filter: invert(1);
+}
+
+.hade__souls {
+  filter: brightness(2) invert(1) grayscale(1);
+}
+
+.hot__souls {
+  filter: blur(3px);
+}
+
+.card__text {
+  font-family: var(--main-font), sans-serif;
+  font-size: 18px;
+  font-weight: var( --main-desk);
+  padding: 27px 25px 0;
+}
+
+.card__text:last-of-type {
+  margin-bottom: 25px;
+}
+
+.card__icon-button {
+  position: absolute;
+  cursor: pointer;
+  padding: 0;
+  bottom: 25px;
+  right: 160px;
+  background-color: transparent;
+  border: 2px solid transparent;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: var(--border);
+  transition: border 0.3s ease;
+}
+
+.sparks {
+  fill-opacity: 0;
+}
+
+.core {
+  fill: var(--bg-color);
+  transition: fill linear 0.3s;
+  transition-delay: 0.03s;
+}
+
+.main-body {
+  fill: var(--bg-color);
+  transition: fill linear 0.3s;
+}
+
+.card__icon-button:hover .core {
+  fill: var(--heart-contour);
+  transition: fill linear 0.3s;
+}
+
+.card__icon-button:hover .main-body {
+  fill: var(--heart-contour);
+  transition: fill linear 0.3s;
+  transition-delay: 0.05s;
+}
+
+.like-icon.is-liked .heart {
+  animation: heart-beat 0.3s ease-in alternate;
+  transform-origin: center;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks-beat 0.3s ease-in alternate;
+  animation-delay: 0.3s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--fill-red);
+  transition: fill 0.3s linear;
+  transition-delay: 0.06s;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--fill-red);
+  transition: fill 0.3s linear;
+  transition-delay: 0.06s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--fill-red);
+  transition: fill 0.3s linear;
+  transition-delay: 0.06s;
+}
+
+.card__icon-button:active .core {
+  fill: var(--fill-red);
+  transition: fill 0.3s linear;
+}
+
+.card__icon-button:active .main-body {
+  fill: var(--fill-red);
+  transition: fill 0.3s linear;
+}
+
+.card__like-button {
+  align-self: flex-end;
+  width: 130px;
+  height: 38px;
+  margin: 0 25px 25px 0;
+  background-color: var(--bg-color);
+  font-family: var(--accent-font), sans-serif;
+  font-size: 14px;
+  font-weight: var(--main-desk);
+  border: var(--border);
+  cursor: pointer;
+  position: relative;
+}
+
+.card__like-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  background-color: var(--accent-color);
+  display: block;
+}
+
+.card__like-button:hover:before {
+  transform: scaleX(1);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: left;
+}
+
+.card__like-button:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-color);
+  transition: box-shadow 0.3s;
+}
+
+.button__text {
+  position: relative;
+  z-index: 2;
+  color: var(--bg-color);
+  mix-blend-mode: difference;
+}
+
+.memory {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.floppy {
+  fill: var(--bg-color);
+  mix-blend-mode: difference;
+}
+
+.memory__like-button {
+  margin: 54px auto 105px;
+  font-family: var(--accent-font), sans-serif;
+  font-size: 14px;
+  font-weight: var(--main-desk);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 350px;
+  min-height: 51px;
+  padding: 6px;
+  position: relative;
+  background-color: var(--bg-color);
+  border: var(--border);
+}
+
+.memory__like-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  background-color: var(--accent-color);
+  display: block;
+}
+
+.memory__like-button:hover:before {
+  transform: scaleX(1);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: left;
+}
+
+.memory__like-button:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0 0 var(--accent-color);
+  transition: box-shadow 0.3s;
+}
+
+.dialog {
+  position: fixed;
+  width: 367px;
+  height: 193px;
+  inset: 0;
+  background-color: var(--bg-color);
+  border: var(--border);
+  color: var(--accent-color);
+}
+
+.dialog[open] {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 31.5px;
+}
+
+.floppy-1 {
+  fill: var(--accent-color);
+}
+
+.dialog::backdrop {
+  background-color: #000;
+  opacity: 0.75;
+}
+
+.ok__button {
+  width: 293px;
+  height: 38px;
+  background-color: var(--bg-color);
+  color: var(--bg-color);
+  font-family: var(--accent-font), sans-serif;
+  font-size: 14px;
+  font-weight: var(--main-desk);
+  border: var(--border);
+  cursor: pointer;
+  position: absolute;
+  bottom: 30.5px;
+  left: 31.5px;
+}
+
+.ok__button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  background-color: var(--accent-color);
+  display: block;
+}
+
+.ok__button:hover:before {
+  transform: scaleX(1);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: left;
+}
+
+.dialog__title {
+  font-family: var(--accent-font), sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  width: 234px;
+}
+
+@media (width <= 1000px) {
+  .header {
+    width: 100%
+  }
+
+  .content__card__item {
+    width: 100%;
+  }
 }
