@@ -112,7 +112,7 @@ button:disabled::before {
   margin-bottom: 57px;
 }
 
-.label {
+.label{
   position: absolute;
   top: 50px;
   right: 25px;
