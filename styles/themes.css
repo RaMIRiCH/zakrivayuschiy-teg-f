@@ -25,32 +25,26 @@
       }
 }
 
-html.theme-dark .button__text{
-    color: var(--accent-color);
-}
-
-html.theme-dark .floppy {
-    fill: var(--accent-color);
-  }
-
 :root.theme-dark{
     --bg-color: #000;
     --accent-color: #00CC14;
-    --main-title: 785;
-    --main-desk: 465;
+    --card-title-font-weight: 785;
+    --card-text-font-weight: 465;
     --heart-contour: #00CC14;
     --bg-gradient: repeating-linear-gradient(90deg, #000, #000 2px, transparent 2px, transparent 4px),
     repeating-linear-gradient(#000, #000 2px, transparent 2px, transparent 4px),
     linear-gradient(#007f0c, #004306);
+    --button-color: var(--accent-color);
 }
 
 :root.theme-light {
     --bg-color: #fff;
     --accent-color: #000;
-    --main-title: 700;
-    --main-desk: 400;
+    --card-title-font-weight: 700;
+    --card-text-font-weightk: 400;
     --heart-contour: #000;
     --bg-gradient: repeating-linear-gradient(90deg, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),
     repeating-linear-gradient(#d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),
-    linear-gradient(#e7e7e7, #1a1a1a);
+    linear-gradient(#e7e7e7 0.01%, #1a1a1a);
+    --button-color: var(--bg-color);
 }
