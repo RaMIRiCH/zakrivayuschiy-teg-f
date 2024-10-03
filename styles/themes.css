@@ -5,7 +5,7 @@
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
 @media (prefers-color-scheme: dark) {
-    :root{
+    :root {
         --bg-color: #000;
         --accent-color: #00CC14;
         --main-title-b: 785;
@@ -16,7 +16,7 @@
         --heart-contour: #00CC14;
     }
 
-    .button__text{
+    .button__text {
         color: var(--accent-color);
     }
 
@@ -25,7 +25,7 @@
       }
 }
 
-:root.theme-dark{
+:root.theme-dark {
     --bg-color: #000;
     --accent-color: #00CC14;
     --card-title-font-weight: 785;
