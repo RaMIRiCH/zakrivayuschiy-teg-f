@@ -50,7 +50,7 @@
 
 .contour {
     fill: var(--accent-color);
-    transition: fill linear 0.3s;
+    transition: fill linear 0.1s;
 }
   
 .main-body {
